@@ -1,13 +1,13 @@
 export const isValidName = (name) => {
-  const regEx = /[^a-zA-Z]/;
+  const regEx = /^[a-zA-Z]+$/;
 
-  return !(regEx.test(name) || name.length < 2);
+  return regEx.test(name) && name.length > 1;
 };
 
 export const isValidLastName = (lastName) => {
-  const regEx = /[^a-zA-z]/;
+  const regEx = /^[a-zA-Z]+$/;
 
-  return !(regEx.test(lastName) || lastName.length < 4);
+  return regEx.test(lastName) && lastName.length > 3;
 };
 
 export const isValidEmail = (email) => {
