@@ -1,17 +1,26 @@
 import React from 'react';
 
-export default function Input({ type, text, verifier }) {
+export default function Input({
+  type,
+  text,
+  isValid,
+  validText,
+  noValidText,
+  verifier,
+  name
+}) {
   return (
     <div>
       <label>
         {text}
         <input
-          onInput={(e) => verifier(e.target.value)}
+          onInput={verifier}
           type={type}
           placeholder={text}
+          name={name}
         />
       </label>
-      <p>{}</p>
+      <p>{isValid ? validText : noValidText}</p>
     </div>
   );
 }
